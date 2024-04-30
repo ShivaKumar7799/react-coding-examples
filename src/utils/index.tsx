@@ -1,4 +1,4 @@
-export const triggerErrorHandler = (error: any) => {
+export const handleApiError = (error: any) => {
     console.log(error,"error boundary error")
     if(error.response.status === 500){
         return "Internal Server Error"

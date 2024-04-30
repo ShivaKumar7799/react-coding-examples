@@ -1,7 +1,7 @@
 "use client"
 import useErrorBoundary from '@/src/hooks/useErrorBoundary'
 import { getTodos } from '@/src/services';
-import { triggerErrorHandler } from '@/src/utils';
+import { handleApiError } from '@/src/utils';
 import React from 'react'
 
 function Page() {
@@ -11,7 +11,7 @@ function Page() {
             await getTodos()
         }
         catch(err){
-           const error =  triggerErrorHandler(err);
+           const error =  handleApiError(err);
            handleError(error)
         }
     }
